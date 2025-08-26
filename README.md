@@ -16,7 +16,7 @@ Video generation is computationally expensive, taking ~10 minutes for 129 frames
 Maintaining coherent motion and identity across video frames, especially in long sequences, remains challenging.
 
 **Solution Approaches**:
-- **Enhanced Attention**: View-inflated attention ([DiVE](#autonomous-driving-applications)), consistent self-attention (StoryDiffusion), cross-frame attention
+- **Enhanced Attention**: View-inflated attention ([DiVE](#autonomous-driving-applications)), consistent self-attention ([StoryDiffusion](#consistency-models--rectified-flow)), cross-frame attention
 - **Latent Methods**: Latent shifting (Mobius), motion-compensated processing
 - **Training Strategies**: Motion consistency models ([MCM](#few-step-inference-2-4-steps)), cycle consistency learning
 - **Frequency Domain**: Time-frequency analysis (TiARA), spectral attention for temporal modeling
@@ -284,6 +284,10 @@ Distillation training suffers from mode collapse, adversarial instability, and m
 - **Frieren: Video-to-Audio with Rectified Flow** (Jun 2025)  
   [[ArXiv](https://arxiv.org/abs/2406.00320)]  
   *V2A model based on rectified flow matching, regresses conditional transport vector fields from noise to spectrogram latent with straight paths. Outperforms autoregressive and score-based models.*
+
+- **StoryDiffusion: Consistent Self-Attention for Long-Range Image and Video Generation** (NeurIPS 2024)  
+  [[ArXiv](https://arxiv.org/abs/2405.01434)] [[GitHub](https://github.com/HVision-NKU/StoryDiffusion)] [[Project](https://storydiffusion.github.io/)]  
+  *Proposes Consistent Self-Attention that significantly boosts consistency between generated images and extends to long-range video generation. Includes Semantic Motion Predictor for smooth transitions and consistent subjects.*
 
 ---
 
