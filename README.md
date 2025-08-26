@@ -6,6 +6,23 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 
 ### Computational Complexity
 - **Standard Performance**: 129-frame video generation takes ~10 minutes on single H100 GPU
+- **Quadratic Scaling**: Attention mechanism scales quadratically with sequence length, severely impacting temporal modeling
+- **Iterative Denoising**: Multi-step nature results in prohibitively slow inference speeds for practical deployment
+
+### Temporal Consistency
+- **Frame-to-Frame Coherence**: Applying image methods frame-by-frame introduces temporal inconsistency and quality degradation
+- **Long-Range Dependencies**: Extended video durations require maintaining consistency across distant frames
+- **Identity Preservation**: Objects and scenes tend to gradually morph over time in long video generation
+
+### Quality-Speed Trade-off
+- **Step Reduction Impact**: Fewer sampling steps often lead to significant quality degradation
+- **Sparsity vs. Detail**: Fixed sparsity patterns struggle to preserve important details at higher acceleration levels
+- **Distribution Mismatch**: Models trained on limited video datasets face quality issues on diverse real-world content
+
+### Training Instability
+- **Mode Collapse**: Generators tend to produce limited variety, ignoring parts of the data distribution
+- **Adversarial Training**: GAN-based distillation suffers from unpredictable training fluctuations
+- **Memory Constraints**: Large-scale model distillation limited by GPU memory requirements
 
 ### Key Distillation Techniques
 - **Distribution Matching Distillation (DMD)**: Minimizes KL divergence
