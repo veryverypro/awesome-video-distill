@@ -8,17 +8,17 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 Video generation is computationally expensive, taking ~10 minutes for 129 frames on H100 GPU with quadratic attention scaling.
 
 **Solution Approaches**:
-- **Step Reduction**: Single-step generation (FLUX), few-step distillation (4-8 steps), consistency models
-- **Attention Optimization**: Sparse attention patterns, attention tiling, asymmetric reduction and restoration (AsymRnR)
-- **Architectural Efficiency**: Compressed representations, quantization (S²Q-VDiT), model pruning and acceleration
+- **Step Reduction**: Single-step generation ([FLUX](#one-step-inference)), few-step distillation (4-8 steps), consistency models
+- **Attention Optimization**: Sparse attention patterns, attention tiling, asymmetric reduction and restoration ([AsymRnR](#acceleration-methods))
+- **Architectural Efficiency**: Compressed representations, quantization ([S²Q-VDiT](#quantization--optimization)), model pruning and acceleration
 
 ### Temporal Consistency
 Maintaining coherent motion and identity across video frames, especially in long sequences, remains challenging.
 
 **Solution Approaches**:
-- **Enhanced Attention**: View-inflated attention (DiVE), consistent self-attention (StoryDiffusion), cross-frame attention
+- **Enhanced Attention**: View-inflated attention ([DiVE](#autonomous-driving-applications)), consistent self-attention (StoryDiffusion), cross-frame attention
 - **Latent Methods**: Latent shifting (Mobius), motion-compensated processing
-- **Training Strategies**: Motion consistency models (MCM), cycle consistency learning
+- **Training Strategies**: Motion consistency models ([MCM](#few-step-inference-2-4-steps)), cycle consistency learning
 - **Frequency Domain**: Time-frequency analysis (TiARA), spectral attention for temporal modeling
 
 ### Quality-Speed Trade-off
@@ -26,7 +26,7 @@ Reducing inference steps for speed often leads to significant quality degradatio
 
 **Solution Approaches**:
 - **Advanced Distillation**: Distribution matching (DMD), trajectory distribution matching (TDM), score implicit matching (SIM)
-- **Adaptive Mechanisms**: Block-sparse attention (Video-BLADE), multiscale rendering (LTX-Video)
+- **Adaptive Mechanisms**: Block-sparse attention ([Video-BLADE](#few-step-inference-2-4-steps)), multiscale rendering ([LTX-Video](#mobile--real-time-generation))
 - **Multi-Step Strategies**: Consistency models, rectified flow matching, few-step generation
 
 ### Training Instability
