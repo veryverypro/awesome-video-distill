@@ -5,9 +5,7 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 ## Technical Challenges & Insights
 
 ### Computational Complexity
-- **Standard Performance**: 129-frame video generation takes ~10 minutes on single H100 GPU
-- **Quadratic Scaling**: Attention mechanism scales quadratically with sequence length, severely impacting temporal modeling
-- **Iterative Denoising**: Multi-step nature results in prohibitively slow inference speeds for practical deployment
+Video generation is computationally expensive, taking ~10 minutes for 129 frames on H100 GPU with quadratic attention scaling.
 
 **Solution Approaches**:
 - **Step Reduction**: Single-step generation (FLUX), few-step distillation (4-8 steps), consistency models
@@ -15,36 +13,29 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 - **Architectural Efficiency**: Compressed representations, quantization (S²Q-VDiT), model pruning and acceleration
 
 ### Temporal Consistency
-- **Frame-to-Frame Coherence**: Applying image methods frame-by-frame introduces temporal inconsistency and quality degradation
-- **Long-Range Dependencies**: Extended video durations require maintaining consistency across distant frames
-- **Identity Preservation**: Objects and scenes tend to gradually morph over time in long video generation
+Maintaining coherent motion and identity across video frames, especially in long sequences, remains challenging.
 
 **Solution Approaches**:
-- **Enhanced Attention Mechanisms**: View-inflated attention (DiVE), consistent self-attention (StoryDiffusion), cross-frame attention
-- **Latent Space Methods**: Latent shifting (Mobius), temporally latent-shifted self-attention, motion-compensated processing
-- **Architectural Innovations**: Additional temporal layers in U-Net, 3D attention mechanisms, frame-invariant processing
-- **Training Strategies**: Motion consistency models (MCM), cycle consistency learning, forward-backward motion consistency
+- **Enhanced Attention**: View-inflated attention (DiVE), consistent self-attention (StoryDiffusion), cross-frame attention
+- **Latent Methods**: Latent shifting (Mobius), motion-compensated processing
+- **Training Strategies**: Motion consistency models (MCM), cycle consistency learning
 - **Frequency Domain**: Time-frequency analysis (TiARA), spectral attention for temporal modeling
 
 ### Quality-Speed Trade-off
-- **Step Reduction Impact**: Fewer sampling steps often lead to significant quality degradation
-- **Sparsity vs. Detail**: Fixed sparsity patterns struggle to preserve important details at higher acceleration levels
-- **Distribution Mismatch**: Models trained on limited video datasets face quality issues on diverse real-world content
+Reducing inference steps for speed often leads to significant quality degradation and detail loss.
 
 **Solution Approaches**:
 - **Advanced Distillation**: Distribution matching (DMD), trajectory distribution matching (TDM), score implicit matching (SIM)
-- **Adaptive Mechanisms**: Block-sparse attention (Video-BLADE), multiscale rendering (LTX-Video), progressive sampling
-- **Multi-Step Strategies**: Consistency models, rectified flow matching, few-step generation with quality preservation
+- **Adaptive Mechanisms**: Block-sparse attention (Video-BLADE), multiscale rendering (LTX-Video)
+- **Multi-Step Strategies**: Consistency models, rectified flow matching, few-step generation
 
 ### Training Instability
-- **Mode Collapse**: Generators tend to produce limited variety, ignoring parts of the data distribution
-- **Adversarial Training**: GAN-based distillation suffers from unpredictable training fluctuations
-- **Memory Constraints**: Large-scale model distillation limited by GPU memory requirements
+Distillation training suffers from mode collapse, adversarial instability, and memory constraints.
 
 **Solution Approaches**:
-- **Stabilization Techniques**: Spectral normalization, gradient penalty, weak-to-strong distillation (W2SVD)
+- **Stabilization**: Spectral normalization, gradient penalty, weak-to-strong distillation (W2SVD)
 - **Memory Optimization**: LoRA fine-tuning, gradient checkpointing, mixed precision training
-- **Training Strategies**: Denoising diffusion GANs, mini-batch discrimination, data-free distillation methods
+- **Training Strategies**: Denoising diffusion GANs, mini-batch discrimination, data-free methods
 
 ### Key Distillation Techniques
 - **Distribution Matching Distillation (DMD)**: Minimizes KL divergence
