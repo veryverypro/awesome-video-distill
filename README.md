@@ -198,7 +198,7 @@ Distillation training suffers from mode collapse, adversarial instability, and m
   [[ArXiv](https://arxiv.org/html/2503.09642v1)] [[GitHub](https://github.com/hpcaitech/Open-Sora)]  
   *Commercial-level model trained for only $200k. Uses Flux initialization and latent space distillation. Reduces gap with OpenAI Sora from 4.52% to 0.69% on VBench.*
 
-- **CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer** (Aug 2025)  
+- **CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer** (Aug 2024)  
   [[ArXiv](https://arxiv.org/abs/2408.06072)] [[GitHub](https://github.com/zai-org/CogVideo)] [[Hugging Face](https://huggingface.co/papers/2408.06072)]  
   *Large-scale T2V model generating 10-second 768×1360 videos at 16fps. Features 3D VAE compression and expert transformer architecture. Used in ADM distillation experiments and concept distillation research.*
 
@@ -238,8 +238,6 @@ Distillation training suffers from mode collapse, adversarial instability, and m
 - **FLUX Ecosystem Expansion**  
   [[Hugging Face](https://huggingface.co/black-forest-labs)] [[GitHub Issues](https://github.com/black-forest-labs/flux/issues/15)]  
   *FLUX.1-schnell demonstrates 1-4 step generation via latent adversarial diffusion distillation. Community discussions on model distillation techniques and acceleration methods.*
-
----
 
 ---
 
