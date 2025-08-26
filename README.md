@@ -8,7 +8,7 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 Video generation is computationally expensive, taking ~10 minutes for 129 frames on H100 GPU with quadratic attention scaling.
 
 **Solution Approaches**:
-- **Step Reduction**: Single-step generation ([FLUX](#one-step-inference)), few-step distillation (4-8 steps), consistency models
+- **Step Reduction**: Single-step generation, few-step distillation (4-8 steps), consistency models
 - **Attention Optimization**: Sparse attention patterns, attention tiling, asymmetric reduction and restoration ([AsymRnR](#acceleration-methods))
 - **Architectural Efficiency**: Compressed representations, quantization ([S²Q-VDiT](#quantization--optimization)), model pruning and acceleration
 
