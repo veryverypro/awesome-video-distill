@@ -6,7 +6,6 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 
 ### Computational Complexity
 - **Standard Performance**: 129-frame video generation takes ~10 minutes on single H100 GPU
-- **Memory Requirements**: H200 GPUs with 141GB memory enable more effective data parallelism
 
 ### Key Distillation Techniques
 1. **Distribution Matching Distillation (DMD)**: Minimizes KL divergence
