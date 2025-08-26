@@ -33,9 +33,9 @@ Maintaining coherent motion and identity across video frames, especially in long
 
 **Solution Approaches**:
 - **Enhanced Attention**: View-inflated attention ([DiVE](#autonomous-driving-applications)), consistent self-attention ([StoryDiffusion](#consistency-models--rectified-flow)), cross-frame attention
-- **Latent Methods**: Latent shifting (Mobius), motion-compensated processing
+- **Latent Methods**: Latent shifting ([Mobius](#consistency-models--rectified-flow)), motion-compensated processing
 - **Training Strategies**: Motion consistency models ([MCM](#few-step-inference-2-4-steps)), cycle consistency learning
-- **Frequency Domain**: Time-frequency analysis (TiARA), spectral attention for temporal modeling
+- **Frequency Domain**: Time-frequency analysis ([TiARA](#consistency-models--rectified-flow)), spectral attention for temporal modeling
 
 ### Quality-Speed Trade-off
 Reducing inference steps for speed often leads to significant quality degradation and detail loss.
@@ -49,7 +49,7 @@ Reducing inference steps for speed often leads to significant quality degradatio
 Distillation training suffers from mode collapse, adversarial instability, and memory constraints.
 
 **Solution Approaches**:
-- **Stabilization**: Spectral normalization, gradient penalty, weak-to-strong distillation (W2SVD)
+- **Stabilization**: Spectral normalization, gradient penalty, weak-to-strong distillation ([W2SVD](#one-step-inference))
 - **Memory Optimization**: LoRA fine-tuning, gradient checkpointing, mixed precision training
 - **Training Strategies**: Denoising diffusion GANs, mini-batch discrimination, data-free methods
 
@@ -289,6 +289,14 @@ Distillation training suffers from mode collapse, adversarial instability, and m
 - **StoryDiffusion: Consistent Self-Attention for Long-Range Image and Video Generation** (NeurIPS 2024)  
   [[ArXiv](https://arxiv.org/abs/2405.01434)] [[GitHub](https://github.com/HVision-NKU/StoryDiffusion)] [[Project](https://storydiffusion.github.io/)]  
   *Proposes Consistent Self-Attention that significantly boosts consistency between generated images and extends to long-range video generation. Includes Semantic Motion Predictor for smooth transitions and consistent subjects.*
+
+- **Mobius: Text to Seamless Looping Video Generation via Latent Shift** (Feb 2025)  
+  [[ArXiv](https://arxiv.org/html/2502.20307v1)]  
+  *Novel method for generating seamless looping videos using latent shifting strategy within denoising process. Constructs latent cycles and uses frame-invariant decoding for temporal consistency.*
+
+- **TiARA: Time-Frequency Analysis for Long Video Generation** (Dec 2024)  
+  [[ArXiv](https://arxiv.org/html/2412.17254)]  
+  *Time-frequency based temporal Attention Reweighting Algorithm using Discrete Short-Time Fourier Transform. Edits attention score matrix to improve long video generation consistency.*
 
 ---
 
