@@ -2,6 +2,45 @@
 
 A curated list of papers on Video Diffusion Transformer (DiT) distillation, focusing on reducing inference steps from N-step to 1-step generation.
 
+## Technical Challenges & Insights
+
+### Computational Complexity
+- **Standard Performance**: 129-frame video generation takes ~10 minutes on single H100 GPU
+- **Training Cost**: Large-scale VDMs require ~10 minutes for 28-step video on H100 GPU
+- **Memory Requirements**: H200 GPUs with 141GB memory enable more effective data parallelism
+
+### Key Distillation Techniques
+1. **Distribution Matching Distillation (DMD)**: Minimizes KL divergence
+2. **Adversarial Step Distillation**: Combines adversarial training with step reduction
+3. **Score Implicit Matching (SIM)**: Maintains sample generation ability
+4. **Multi-Step Consistency Distillation (MCD)**: Generates student with fewer steps
+5. **Latent Space Distillation**: Aligns latents with foundation models
+6. **Trajectory Distribution Matching (TDM)**: Unifies distribution and trajectory matching
+7. **Concept Distillation**: Transfers conceptual understanding from T2V models
+8. **Weak-to-Strong Video Distillation (W2SVD)**: Mitigates training memory issues
+9. **Salient Data & Sparse Token Distillation**: Focuses on influential tokens for quantization
+10. **Motion-Appearance Disentangled Distillation**: Separates motion and appearance for efficient video generation
+11. **Multi-Control Auxiliary Branch Distillation (MAD)**: Eliminates CFG selection for controllable generation
+12. **Rectified Flow Matching (RFM)**: Builds straight paths from noise to samples
+13. **Latent Adversarial Diffusion Distillation**: FLUX-style single-step generation
+14. **Knowledge Distillation for Video Models**: Student models learn from larger teacher models
+
+### Architecture Innovations
+- **Adaptive Block-Sparse Attention (ASA)**: Dynamic, content-aware attention
+- **Attention Tile**: Efficient attention mechanisms for video transformers
+- **High-Compression VAE**: Reduces computational overhead
+- **Expert Transformer**: Expert adaptive LayerNorm for text-video fusion
+- **3D Variational Autoencoder**: Compresses videos along spatial and temporal dimensions
+- **Chain of Diffusion Experts**: Multiple specialized models for long video generation
+- **AsymmDiT (Asymmetric DiT)**: Novel architecture with asymmetric spatial/temporal processing
+- **AsymmVAE**: Causal video compression with 8x8 spatial and 6x temporal compression
+- **Multiscale Rendering**: Progressive detail generation for speed and quality
+- **Unified Full Attention**: Single attention mechanism for superior performance
+- **View-Inflated Attention**: Parameter-free cross-view consistency for multi-view generation
+- **Asymmetric Reduction and Restoration**: Training-free token reduction based on redundancy
+
+---
+
 ## Table of Contents
 - [One-Step Inference](#one-step-inference)
 - [Few-Step Inference (2-4 steps)](#few-step-inference-2-4-steps)
@@ -243,45 +282,6 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 - **Adversarial Distribution Matching for Video Synthesis** (Jul 2025)  
   [[ArXiv](https://arxiv.org/html/2507.18569)]  
   *Applies multi-step ADM distillation on CogVideoX. Demonstrates 8-step ADM distillation for efficient video generation with maintained quality.*
-
----
-
-## Technical Challenges & Insights
-
-### Computational Complexity
-- **Standard Performance**: 129-frame video generation takes ~10 minutes on single H100 GPU
-- **Training Cost**: Large-scale VDMs require ~10 minutes for 28-step video on H100 GPU
-- **Memory Requirements**: H200 GPUs with 141GB memory enable more effective data parallelism
-
-### Key Distillation Techniques
-1. **Distribution Matching Distillation (DMD)**: Minimizes KL divergence
-2. **Adversarial Step Distillation**: Combines adversarial training with step reduction
-3. **Score Implicit Matching (SIM)**: Maintains sample generation ability
-4. **Multi-Step Consistency Distillation (MCD)**: Generates student with fewer steps
-5. **Latent Space Distillation**: Aligns latents with foundation models
-6. **Trajectory Distribution Matching (TDM)**: Unifies distribution and trajectory matching
-7. **Concept Distillation**: Transfers conceptual understanding from T2V models
-8. **Weak-to-Strong Video Distillation (W2SVD)**: Mitigates training memory issues
-9. **Salient Data & Sparse Token Distillation**: Focuses on influential tokens for quantization
-10. **Motion-Appearance Disentangled Distillation**: Separates motion and appearance for efficient video generation
-11. **Multi-Control Auxiliary Branch Distillation (MAD)**: Eliminates CFG selection for controllable generation
-12. **Rectified Flow Matching (RFM)**: Builds straight paths from noise to samples
-13. **Latent Adversarial Diffusion Distillation**: FLUX-style single-step generation
-14. **Knowledge Distillation for Video Models**: Student models learn from larger teacher models
-
-### Architecture Innovations
-- **Adaptive Block-Sparse Attention (ASA)**: Dynamic, content-aware attention
-- **Attention Tile**: Efficient attention mechanisms for video transformers
-- **High-Compression VAE**: Reduces computational overhead
-- **Expert Transformer**: Expert adaptive LayerNorm for text-video fusion
-- **3D Variational Autoencoder**: Compresses videos along spatial and temporal dimensions
-- **Chain of Diffusion Experts**: Multiple specialized models for long video generation
-- **AsymmDiT (Asymmetric DiT)**: Novel architecture with asymmetric spatial/temporal processing
-- **AsymmVAE**: Causal video compression with 8x8 spatial and 6x temporal compression
-- **Multiscale Rendering**: Progressive detail generation for speed and quality
-- **Unified Full Attention**: Single attention mechanism for superior performance
-- **View-Inflated Attention**: Parameter-free cross-view consistency for multi-view generation
-- **Asymmetric Reduction and Restoration**: Training-free token reduction based on redundancy
 
 ---
 
