@@ -2,6 +2,22 @@
 
 A curated list of papers on Video Diffusion Transformer (DiT) distillation, focusing on reducing inference steps from N-step to 1-step generation.
 
+## Table of Contents
+- [Technical Challenges & Insights](#technical-challenges--insights)
+- [One-Step Inference](#one-step-inference)
+- [Few-Step Inference (2-4 steps)](#few-step-inference-2-4-steps)
+- [Mobile & Real-Time Generation](#mobile--real-time-generation)
+- [Quantization & Optimization](#quantization--optimization)
+- [Open Source Implementations](#open-source-implementations)
+- [Industry Applications](#industry-applications)
+- [Video Restoration & Enhancement](#video-restoration--enhancement)
+- [Dataset Distillation](#dataset-distillation)
+- [Consistency Models & Rectified Flow](#consistency-models--rectified-flow)
+- [Autonomous Driving Applications](#autonomous-driving-applications)
+- [Acceleration Methods](#acceleration-methods)
+
+---
+
 ## Technical Challenges & Insights
 
 ### Computational Complexity
@@ -66,21 +82,6 @@ Distillation training suffers from mode collapse, adversarial instability, and m
 - **Unified Full Attention**: Single attention mechanism for superior performance
 - **View-Inflated Attention**: Parameter-free cross-view consistency for multi-view generation
 - **Asymmetric Reduction and Restoration**: Training-free token reduction based on redundancy
-
----
-
-## Table of Contents
-- [One-Step Inference](#one-step-inference)
-- [Few-Step Inference (2-4 steps)](#few-step-inference-2-4-steps)
-- [Mobile & Real-Time Generation](#mobile--real-time-generation)
-- [Quantization & Optimization](#quantization--optimization)
-- [Open Source Implementations](#open-source-implementations)
-- [Industry Applications](#industry-applications)
-- [Video Restoration & Enhancement](#video-restoration--enhancement)
-- [Dataset Distillation](#dataset-distillation)
-- [Consistency Models & Rectified Flow](#consistency-models--rectified-flow)
-- [Autonomous Driving Applications](#autonomous-driving-applications)
-- [Acceleration Methods](#acceleration-methods)
 
 ---
 
