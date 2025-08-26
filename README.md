@@ -9,6 +9,8 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 - [Quantization & Optimization](#quantization--optimization)
 - [Open Source Implementations](#open-source-implementations)
 - [Industry Applications](#industry-applications)
+- [Video Restoration & Enhancement](#video-restoration--enhancement)
+- [Dataset Distillation](#dataset-distillation)
 
 ---
 
@@ -27,6 +29,10 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 - **VideoScene: Distilling Video Diffusion Model to Generate 3D Scenes in One Step** (Apr 2025)  
   [[ArXiv](https://arxiv.org/html/2504.01956v1)]  
   *Focuses on recovering 3D scenes from sparse views using single-step generation.*
+
+- **FLUX.1-schnell: Adversarial Diffusion Distillation for Single-Step Generation** (2025)  
+  [[Hugging Face](https://huggingface.co/black-forest-labs/FLUX.1-schnell)]  
+  *Trained using latent adversarial diffusion distillation, can generate high-quality images in 1-4 steps. Extended to video applications via APT method.*
 
 ### 2024
 
@@ -52,11 +58,19 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
   [[ArXiv](https://arxiv.org/html/2502.06155)]  
   *Adopts multi-step consistency distillation (MCD) technique to generate student model with fewer sampling steps than teacher.*
 
-### 2024
+- **GVD: Guiding Video Diffusion Model for Scalable Video Distillation** (Jul 2025)  
+  [[ArXiv](https://arxiv.org/abs/2507.22360)]  
+  *First diffusion-based video distillation method. Achieves 78.29% performance using only 1.98% of frames in MiniUCF.*
 
-- **Video-BLADE: Block-Sparse Attention Meets Step Distillation for Efficient Video Generation** (Aug 2024)  
+- **Training-free Long Video Generation with Chain of Diffusion Model Experts** (Aug 2025)  
+  [[ArXiv](https://arxiv.org/abs/2408.13423)] [[Hugging Face](https://huggingface.co/papers/2408.13423)]  
+  *Novel approach for generating long videos using multiple diffusion experts without additional training.*
+
+### 2024-2025 (Updated)
+
+- **Video-BLADE: Block-Sparse Attention Meets Step Distillation for Efficient Video Generation** (Aug 2025)  
   [[ArXiv](https://arxiv.org/html/2508.10774)]  
-  *Proposes BLADE framework with Adaptive Block-Sparse Attention (ASA) and sparsity-aware step distillation.*
+  *BLADE framework with Adaptive Block-Sparse Attention (ASA) and Trajectory Distribution Matching (TDM) distillation process. Achieves significant inference acceleration without sacrificing generation quality.*
 
 - **Multi-Student Diffusion Distillation for Better One-step Generators** (2025)  
   [[NVIDIA Research](https://research.nvidia.com/publication/2025-03_multi-student-diffusion-distillation-better-one-step-generators)]  
@@ -66,11 +80,11 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 
 ## Mobile & Real-Time Generation
 
-### 2024
+### 2025
 
-- **Taming Diffusion Transformer for Real-Time Mobile Video Generation**  
+- **Taming Diffusion Transformer for Real-Time Mobile Video Generation** (Jul 2025)  
   [[ArXiv](https://arxiv.org/html/2507.13343)]  
-  *Achieves 10+ FPS on iPhone 16 Pro Max using only 4 denoising steps (4 seconds for 49 frames). Combines high-compression VAE, latency-aware pruning, and adversarial step distillation.*
+  *Achieves 10+ FPS on iPhone 16 Pro Max using only 4 denoising steps (4 seconds for 49 frames). Uses distillation-guided, sensitivity-aware pruning with new discriminator design for DiTs.*
 
 - **Optimizing Transformer-Based Diffusion Models for Video Generation with NVIDIA TensorRT**  
   [[NVIDIA Blog](https://developer.nvidia.com/blog/optimizing-transformer-based-diffusion-models-for-video-generation-with-nvidia-tensorrt/)]  
@@ -79,6 +93,12 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 ---
 
 ## Quantization & Optimization
+
+### 2025
+
+- **S²Q-VDiT: Accurate Quantized Video Diffusion Transformer with Salient Data and Sparse Token Distillation** (Aug 2025)  
+  [[ArXiv](https://arxiv.org/abs/2508.04016)]  
+  *Post-training quantization framework using Hessian-aware Salient Data Selection and Attention-guided Sparse Token Distillation. Achieves 3.9× model compression and 1.3× inference acceleration under W4A6 quantization.*
 
 ### 2024
 
@@ -100,6 +120,14 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
   [[ArXiv](https://arxiv.org/html/2503.09642v1)] [[GitHub](https://github.com/hpcaitech/Open-Sora)]  
   *Commercial-level model trained for only $200k. Uses Flux initialization and latent space distillation. Reduces gap with OpenAI Sora from 4.52% to 0.69% on VBench.*
 
+- **CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer** (Aug 2025)  
+  [[ArXiv](https://arxiv.org/abs/2408.06072)] [[GitHub](https://github.com/zai-org/CogVideo)] [[Hugging Face](https://huggingface.co/papers/2408.06072)]  
+  *Large-scale T2V model generating 10-second 768×1360 videos at 16fps. Features 3D VAE compression and expert transformer architecture. Used in ADM distillation experiments and concept distillation research.*
+
+- **Diffusers Library: State of Open Video Generation Models** (Jan 2025)  
+  [[Hugging Face Blog](https://huggingface.co/blog/video_gen)]  
+  *Comprehensive overview of video generation models in 🤗 Diffusers library. Plans for 2025 include Control LoRAs, Distillation Algorithms, ControlNets, and Adapters.*
+
 ### 2024
 
 - **Diffusion Transformers for Image and Video Generation** (CVPR 2024)  
@@ -119,6 +147,38 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
   [[Official](https://openai.com/sora/)] [[System Card](https://openai.com/index/sora-system-card/)]  
   *Released Sora Turbo - significantly faster than February preview model. Available for ChatGPT Plus/Pro users.*
 
+### 2025 Industry Developments
+
+- **FLUX Ecosystem Expansion**  
+  [[Hugging Face](https://huggingface.co/black-forest-labs)] [[GitHub Issues](https://github.com/black-forest-labs/flux/issues/15)]  
+  *FLUX.1-schnell demonstrates 1-4 step generation via latent adversarial diffusion distillation. Community discussions on model distillation techniques and acceleration methods.*
+
+---
+
+---
+
+## Video Restoration & Enhancement
+
+### 2025
+
+- **Vivid-VR: Distilling Concepts from Text-to-Video Diffusion Transformer for Photorealistic Video Restoration** (Aug 2025)  
+  [[ArXiv](https://arxiv.org/html/2508.14483)]  
+  *DiT-based generative video restoration using CogVideoX1.5-5B foundation model. Introduces concept distillation training strategy to preserve texture and temporal quality.*
+
+---
+
+## Dataset Distillation
+
+### 2025
+
+- **The Evolution of Dataset Distillation: Toward Scalable and Generalizable Solutions** (Feb 2025)  
+  [[ArXiv](https://arxiv.org/html/2502.05673v3)]  
+  *Comprehensive survey covering dataset distillation advances including applications to video diffusion models.*
+
+- **Seedance 1.0: Exploring the Boundaries of Video Generation Models** (Jun 2025)  
+  [[Hugging Face](https://huggingface.co/papers/2506.09113)]  
+  *Explores video generation model capabilities and boundaries, with implications for distillation approaches.*
+
 ---
 
 ## Technical Challenges & Insights
@@ -134,11 +194,18 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 3. **Score Implicit Matching (SIM)**: Maintains sample generation ability
 4. **Multi-Step Consistency Distillation (MCD)**: Generates student with fewer steps
 5. **Latent Space Distillation**: Aligns latents with foundation models
+6. **Trajectory Distribution Matching (TDM)**: Unifies distribution and trajectory matching
+7. **Concept Distillation**: Transfers conceptual understanding from T2V models
+8. **Weak-to-Strong Video Distillation (W2SVD)**: Mitigates training memory issues
+9. **Salient Data & Sparse Token Distillation**: Focuses on influential tokens for quantization
 
 ### Architecture Innovations
 - **Adaptive Block-Sparse Attention (ASA)**: Dynamic, content-aware attention
 - **Attention Tile**: Efficient attention mechanisms for video transformers
 - **High-Compression VAE**: Reduces computational overhead
+- **Expert Transformer**: Expert adaptive LayerNorm for text-video fusion
+- **3D Variational Autoencoder**: Compresses videos along spatial and temporal dimensions
+- **Chain of Diffusion Experts**: Multiple specialized models for long video generation
 
 ---
 
@@ -169,5 +236,5 @@ This compilation is available under Creative Commons license. Individual papers 
 
 ---
 
-*Last Updated: August 2025*  
-*Total Papers: 15+ cutting-edge research works*
+*Last Updated: August 27, 2025*  
+*Total Papers: 25+ cutting-edge research works*
