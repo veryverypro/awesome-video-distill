@@ -8,20 +8,20 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 - **Standard Performance**: 129-frame video generation takes ~10 minutes on single H100 GPU
 
 ### Key Distillation Techniques
-1. **Distribution Matching Distillation (DMD)**: Minimizes KL divergence
-2. **Adversarial Diffusion Distillation (ADD)**: Combines score distillation with adversarial loss for 1-4 step generation
-3. **Score Implicit Matching (SIM)**: Maintains sample generation ability
-4. **Multi-Step Consistency Distillation (MCD)**: Generates student with fewer steps
-5. **Latent Consistency Models (LCM)**: Enable 2-4 step generation in latent space
-6. **Trajectory Distribution Matching (TDM)**: Unifies distribution and trajectory matching
-7. **Concept Distillation**: Transfers T2V model understanding using synthesized training data (Vivid-VR)
-8. **Weak-to-Strong Video Distillation (W2SVD)**: Mitigates training memory issues
-9. **Salient Data & Sparse Token Distillation**: Focuses on influential tokens for quantization
-10. **Motion-Appearance Disentangled Distillation**: Separates motion and appearance for efficient video generation
-11. **Multi-Control Auxiliary Branch Distillation (MAD)**: Eliminates CFG selection for controllable generation
-12. **Rectified Flow Matching (RFM)**: Builds straight paths from noise to samples
-13. **Latent Adversarial Diffusion Distillation**: FLUX-style single-step generation
-14. **Progressive Training Distillation**: Multi-resolution training for efficient video generation (LTX-Video)
+- **Distribution Matching Distillation (DMD)**: Minimizes KL divergence
+- **Adversarial Diffusion Distillation (ADD)**: Combines score distillation with adversarial loss for 1-4 step generation
+- **Score Implicit Matching (SIM)**: Maintains sample generation ability
+- **Multi-Step Consistency Distillation (MCD)**: Generates student with fewer steps
+- **Latent Consistency Models (LCM)**: Enable 2-4 step generation in latent space
+- **Trajectory Distribution Matching (TDM)**: Unifies distribution and trajectory matching
+- **Concept Distillation**: Transfers T2V model understanding using synthesized training data (Vivid-VR)
+- **Weak-to-Strong Video Distillation (W2SVD)**: Mitigates training memory issues
+- **Salient Data & Sparse Token Distillation**: Focuses on influential tokens for quantization
+- **Motion-Appearance Disentangled Distillation**: Separates motion and appearance for efficient video generation
+- **Multi-Control Auxiliary Branch Distillation (MAD)**: Eliminates CFG selection for controllable generation
+- **Rectified Flow Matching (RFM)**: Builds straight paths from noise to samples
+- **Latent Adversarial Diffusion Distillation**: FLUX-style single-step generation
+- **Progressive Training Distillation**: Multi-resolution training for efficient video generation (LTX-Video)
 
 ### Architecture Innovations
 - **Adaptive Block-Sparse Attention (ASA)**: Dynamic, content-aware attention
