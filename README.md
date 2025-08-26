@@ -9,20 +9,42 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 - **Quadratic Scaling**: Attention mechanism scales quadratically with sequence length, severely impacting temporal modeling
 - **Iterative Denoising**: Multi-step nature results in prohibitively slow inference speeds for practical deployment
 
+**Solution Approaches**:
+- **Step Reduction**: Single-step generation (FLUX), few-step distillation (4-8 steps), consistency models
+- **Attention Optimization**: Sparse attention patterns, attention tiling, asymmetric reduction and restoration (AsymRnR)
+- **Architectural Efficiency**: Compressed representations, quantization (S²Q-VDiT), model pruning and acceleration
+
 ### Temporal Consistency
 - **Frame-to-Frame Coherence**: Applying image methods frame-by-frame introduces temporal inconsistency and quality degradation
 - **Long-Range Dependencies**: Extended video durations require maintaining consistency across distant frames
 - **Identity Preservation**: Objects and scenes tend to gradually morph over time in long video generation
+
+**Solution Approaches**:
+- **Enhanced Attention Mechanisms**: View-inflated attention (DiVE), consistent self-attention (StoryDiffusion), cross-frame attention
+- **Latent Space Methods**: Latent shifting (Mobius), temporally latent-shifted self-attention, motion-compensated processing
+- **Architectural Innovations**: Additional temporal layers in U-Net, 3D attention mechanisms, frame-invariant processing
+- **Training Strategies**: Motion consistency models (MCM), cycle consistency learning, forward-backward motion consistency
+- **Frequency Domain**: Time-frequency analysis (TiARA), spectral attention for temporal modeling
 
 ### Quality-Speed Trade-off
 - **Step Reduction Impact**: Fewer sampling steps often lead to significant quality degradation
 - **Sparsity vs. Detail**: Fixed sparsity patterns struggle to preserve important details at higher acceleration levels
 - **Distribution Mismatch**: Models trained on limited video datasets face quality issues on diverse real-world content
 
+**Solution Approaches**:
+- **Advanced Distillation**: Distribution matching (DMD), trajectory distribution matching (TDM), score implicit matching (SIM)
+- **Adaptive Mechanisms**: Block-sparse attention (Video-BLADE), multiscale rendering (LTX-Video), progressive sampling
+- **Multi-Step Strategies**: Consistency models, rectified flow matching, few-step generation with quality preservation
+
 ### Training Instability
 - **Mode Collapse**: Generators tend to produce limited variety, ignoring parts of the data distribution
 - **Adversarial Training**: GAN-based distillation suffers from unpredictable training fluctuations
 - **Memory Constraints**: Large-scale model distillation limited by GPU memory requirements
+
+**Solution Approaches**:
+- **Stabilization Techniques**: Spectral normalization, gradient penalty, weak-to-strong distillation (W2SVD)
+- **Memory Optimization**: LoRA fine-tuning, gradient checkpointing, mixed precision training
+- **Training Strategies**: Denoising diffusion GANs, mini-batch discrimination, data-free distillation methods
 
 ### Key Distillation Techniques
 - **Distribution Matching Distillation (DMD)**: Minimizes KL divergence
