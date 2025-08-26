@@ -11,6 +11,9 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 - [Industry Applications](#industry-applications)
 - [Video Restoration & Enhancement](#video-restoration--enhancement)
 - [Dataset Distillation](#dataset-distillation)
+- [Consistency Models & Rectified Flow](#consistency-models--rectified-flow)
+- [Autonomous Driving Applications](#autonomous-driving-applications)
+- [Acceleration Methods](#acceleration-methods)
 
 ---
 
@@ -66,6 +69,10 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
   [[ArXiv](https://arxiv.org/abs/2408.13423)] [[Hugging Face](https://huggingface.co/papers/2408.13423)]  
   *Novel approach for generating long videos using multiple diffusion experts without additional training.*
 
+- **Motion Consistency Model: Accelerating Video Diffusion** (Jun 2025)  
+  [[ArXiv](https://arxiv.org/html/2406.06890v1)]  
+  *Single-stage video diffusion distillation method with disentangled motion-appearance distillation. Enables few-step sampling and achieves SOTA video distillation performance.*
+
 ### 2024-2025 (Updated)
 
 - **Video-BLADE: Block-Sparse Attention Meets Step Distillation for Efficient Video Generation** (Aug 2025)  
@@ -85,6 +92,10 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 - **Taming Diffusion Transformer for Real-Time Mobile Video Generation** (Jul 2025)  
   [[ArXiv](https://arxiv.org/html/2507.13343)]  
   *Achieves 10+ FPS on iPhone 16 Pro Max using only 4 denoising steps (4 seconds for 49 frames). Uses distillation-guided, sensitivity-aware pruning with new discriminator design for DiTs.*
+
+- **LTX-Video: Real-Time Video Generation 30x Faster** (2025)  
+  [[GitHub](https://github.com/Lightricks/LTX-Video)] [[Hugging Face](https://huggingface.co/Lightricks/LTX-Video)]  
+  *13B-parameter DiT model with multiscale rendering. Distilled version runs in 4-8 steps (9.5 seconds generation) on consumer GPUs like RTX 4090. Achieves 30x speed improvement over comparable models.*
 
 - **Optimizing Transformer-Based Diffusion Models for Video Generation with NVIDIA TensorRT**  
   [[NVIDIA Blog](https://developer.nvidia.com/blog/optimizing-transformer-based-diffusion-models-for-video-generation-with-nvidia-tensorrt/)]  
@@ -127,6 +138,14 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 - **Diffusers Library: State of Open Video Generation Models** (Jan 2025)  
   [[Hugging Face Blog](https://huggingface.co/blog/video_gen)]  
   *Comprehensive overview of video generation models in 🤗 Diffusers library. Plans for 2025 include Control LoRAs, Distillation Algorithms, ControlNets, and Adapters.*
+
+- **Mochi 1: State-of-the-Art Open-Source Video Generation** (Oct 2024)  
+  [[GitHub](https://github.com/genmoai/mochi)] [[Hugging Face](https://huggingface.co/genmo/mochi-1-preview)]  
+  *10B parameter model with novel AsymmDiT architecture. Features 128x spatial compression, 6x temporal compression, and 30fps generation. Uses single T5-XXL language model and requires ~60GB VRAM.*
+
+- **HunyuanVideo: Large-Scale Open-Source Video Generation** (Dec 2024)  
+  [[ArXiv](https://arxiv.org/html/2412.03603v1)] [[GitHub](https://github.com/Tencent-Hunyuan/HunyuanVideo)] [[Hugging Face](https://huggingface.co/tencent/HunyuanVideo)]  
+  *13B+ parameter model from Tencent with unified Full Attention mechanism. Features model distillation to solve inference limitations and uses MLLM as text encoder. Includes FP8 model weights to save GPU memory.*
 
 ### 2024
 
@@ -181,6 +200,52 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 
 ---
 
+## Consistency Models & Rectified Flow
+
+### 2025
+
+- **VideoLCM: Video Latent Consistency Model** (Dec 2023/2025 Updates)  
+  [[ArXiv](https://arxiv.org/abs/2312.09109)] [[OpenReview](https://openreview.net/forum?id=TpshckO3g4)] [[Hugging Face](https://huggingface.co/papers/2312.09109)]  
+  *Extends latent consistency models to video generation. Enables high-fidelity video synthesis in 4-6 steps (vs 50 for DDIM). Can produce visually satisfactory results with even 1 step for compositional video synthesis.*
+
+- **OpenAI sCM: Simplified Consistency Models** (2025)  
+  [[OpenAI Blog](https://openai.com/index/simplifying-stabilizing-and-scaling-continuous-time-consistency-models/)]  
+  *Achieves comparable sample quality to diffusion models using only 2 sampling steps, resulting in ~50x wall-clock speedup through simplified theoretical formulation.*
+
+- **Rectified Flow for Video Generation** (2025)  
+  [[ArXiv Multiple](https://arxiv.org/abs/2403.03206)]  
+  *FiVE benchmark for evaluating rectified flow models in video editing. V2SFlow uses Rectified Flow Matching for video-to-speech generation. RF-Edit framework for video editing with structural preservation.*
+
+- **Frieren: Video-to-Audio with Rectified Flow** (Jun 2025)  
+  [[ArXiv](https://arxiv.org/abs/2406.00320)]  
+  *V2A model based on rectified flow matching, regresses conditional transport vector fields from noise to spectrogram latent with straight paths. Outperforms autoregressive and score-based models.*
+
+---
+
+## Autonomous Driving Applications
+
+### 2025
+
+- **DiVE: Efficient Multi-View Driving Scenes Generation** (Apr 2025)  
+  [[ArXiv](https://arxiv.org/html/2504.19614)] [[OpenReview](https://openreview.net/forum?id=cvDB1QAYUu)]  
+  *First DiT-based framework for multi-view driving scenario videos. Features Multi-Control Auxiliary Branch Distillation (MAD) eliminating CFG selection. Achieves 2.62x speedup with Resolution Progressive Sampling.*
+
+---
+
+## Acceleration Methods
+
+### 2025
+
+- **AsymRnR: Asymmetric Reduction and Restoration for Video DiT Acceleration** (Dec 2024/ICML 2025)  
+  [[ArXiv](https://arxiv.org/abs/2412.11706)] [[ICML](https://icml.cc/virtual/2025/poster/46432)]  
+  *Training-free and model-agnostic method for accelerating video DiTs. Asymmetrically reduces redundant tokens based on their redundancy across model blocks, denoising steps, and feature types. Reduces running time by nearly 1/3.*
+
+- **Adversarial Distribution Matching for Video Synthesis** (Jul 2025)  
+  [[ArXiv](https://arxiv.org/html/2507.18569)]  
+  *Applies multi-step ADM distillation on CogVideoX. Demonstrates 8-step ADM distillation for efficient video generation with maintained quality.*
+
+---
+
 ## Technical Challenges & Insights
 
 ### Computational Complexity
@@ -198,6 +263,11 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 7. **Concept Distillation**: Transfers conceptual understanding from T2V models
 8. **Weak-to-Strong Video Distillation (W2SVD)**: Mitigates training memory issues
 9. **Salient Data & Sparse Token Distillation**: Focuses on influential tokens for quantization
+10. **Motion-Appearance Disentangled Distillation**: Separates motion and appearance for efficient video generation
+11. **Multi-Control Auxiliary Branch Distillation (MAD)**: Eliminates CFG selection for controllable generation
+12. **Rectified Flow Matching (RFM)**: Builds straight paths from noise to samples
+13. **Latent Adversarial Diffusion Distillation**: FLUX-style single-step generation
+14. **Knowledge Distillation for Video Models**: Student models learn from larger teacher models
 
 ### Architecture Innovations
 - **Adaptive Block-Sparse Attention (ASA)**: Dynamic, content-aware attention
@@ -206,6 +276,12 @@ A curated list of papers on Video Diffusion Transformer (DiT) distillation, focu
 - **Expert Transformer**: Expert adaptive LayerNorm for text-video fusion
 - **3D Variational Autoencoder**: Compresses videos along spatial and temporal dimensions
 - **Chain of Diffusion Experts**: Multiple specialized models for long video generation
+- **AsymmDiT (Asymmetric DiT)**: Novel architecture with asymmetric spatial/temporal processing
+- **AsymmVAE**: Causal video compression with 8x8 spatial and 6x temporal compression
+- **Multiscale Rendering**: Progressive detail generation for speed and quality
+- **Unified Full Attention**: Single attention mechanism for superior performance
+- **View-Inflated Attention**: Parameter-free cross-view consistency for multi-view generation
+- **Asymmetric Reduction and Restoration**: Training-free token reduction based on redundancy
 
 ---
 
@@ -237,4 +313,4 @@ This compilation is available under Creative Commons license. Individual papers 
 ---
 
 *Last Updated: August 27, 2025*  
-*Total Papers: 25+ cutting-edge research works*
+*Total Papers: 35+ cutting-edge research works*
